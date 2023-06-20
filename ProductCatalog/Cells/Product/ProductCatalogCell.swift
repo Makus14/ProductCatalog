@@ -9,8 +9,6 @@ import UIKit
 
 class ProductCatalogCell: UITableViewCell {
     static let id = String(describing: ProductCatalogCell.self)
-
-    //var autoriz: EnumAuthorization?
     
     @IBOutlet weak var productNameOutlet: UILabel!
     @IBOutlet weak var productDescriptionOutlet: UILabel!

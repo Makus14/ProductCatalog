@@ -14,9 +14,7 @@ class ProductController: UIViewController {
     
     var category: CategoryModel?
     var autoriz: EnumAuthorization?
-    
     var products = RealmManager<ProductModel>().read()
-    
     var massSorted = [ProductModel]() {
         didSet {
             tableView.reloadData()
@@ -28,10 +26,8 @@ class ProductController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         registerCell()
-        //getProducts()
         tableView.reloadData()
         
- 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +70,6 @@ class ProductController: UIViewController {
     }
 
     @IBAction func createNewProductAction(_ sender: Any) {
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: String(describing: NewProductController.self)) as? NewProductController else { return }
         
@@ -88,7 +83,7 @@ class ProductController: UIViewController {
             self?.tableView.reloadData()
         }
         navigationController?.pushViewController(vc, animated: true)
-        //present(vc, animated: true)
+
     }
     
     @IBAction func sortedByPriceDidTap(_ sender: UIButton) {
@@ -98,18 +93,12 @@ class ProductController: UIViewController {
                 
             }
             sender.tintColor = UIColor.red
-            //category?.products = massSorted
-
         } else {
             for _ in category!.products {
                 sender.tintColor = UIColor.red
                 self.massSorted = (category?.products.sorted( by: { $0.price < $1.price }))!
-                
             }
-
             sender.tintColor = UIColor.green
-            //category?.products = massSorted
-
         }
 
 }

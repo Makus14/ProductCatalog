@@ -74,8 +74,6 @@ class NewProductController: UIViewController {
                 let product = ProductModel(productName: nameProductOutlet.text!, productDescription: descriptionOutlet.text!, price: price, generalNote: generalNoteOutlet.text!, specialNote: specialNoteOutlet.text!, ownerID: owner)
                 RealmManager<ProductModel>().write(object: product)
                 updateProductBlock?()
-                //dismiss(animated: true)
-                //self.navigationController?.popViewController(animated: true)
             case .edit:
                 guard let existProduct = existProduct else { return }
                 RealmManager<ProductModel>().update { realm in
@@ -89,12 +87,8 @@ class NewProductController: UIViewController {
                     }
                     
                 }
-               
-                //self.navigationController?.popViewController(animated: true)
                 updateProductBlock?()
         }
-        //dismiss(animated: true)
-        //updateProductBlock?()
         self.navigationController?.popViewController(animated: true)
         
     }

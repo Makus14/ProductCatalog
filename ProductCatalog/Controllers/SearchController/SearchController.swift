@@ -96,7 +96,6 @@ extension SearchController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCatalogCell.id, for: indexPath)
         guard let productCell = cell as? ProductCatalogCell else { return cell }
-        //if let product = category?.products[indexPath.row] {
             
             let productName = String(massSearch[indexPath.row].productName)
             let productDescription = String(massSearch[indexPath.row].productDescription)
@@ -104,8 +103,6 @@ extension SearchController: UITableViewDataSource {
             let generalNote = String(massSearch[indexPath.row].generalNote)
             let specialNote = String(massSearch[indexPath.row].specialNote)
             
-
-        
             productCell.set(productName: productName, productDescription: productDescription, price: price, generalNote: generalNote, specialNote: specialNote)
         
             if autoriz == .simpleUser {
@@ -123,5 +120,4 @@ extension SearchController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-
 }

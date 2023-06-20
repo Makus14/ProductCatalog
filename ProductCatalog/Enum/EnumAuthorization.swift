@@ -12,5 +12,4 @@ enum EnumAuthorization {
     case admin
     case simpleUser
     case advancedUser
-    //case defaultError
 }

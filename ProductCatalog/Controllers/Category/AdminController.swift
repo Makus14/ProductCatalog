@@ -89,11 +89,8 @@ extension AdminController: UITableViewDataSource {
         guard let categoryCell = cell as? ProductCell else { return cell }
         categoryCell.set(category: category[indexPath.row])
         
-        //vc.set(person: person)
-        
         return categoryCell
     }
-    
     
 }
 

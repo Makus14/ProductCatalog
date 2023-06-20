@@ -37,5 +37,4 @@ class NewCategoryController: UIViewController {
         updateBlock?()
     }
     
-
 }
